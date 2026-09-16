@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StrideX Bangladesh </title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Meta Pixel Code (kept as is) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1796339418030435');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    /* -------- LIGHT GREENISH HERITAGE PALETTE -------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+    }
+
+    body {
+      background: #eaf2e0;  /* soft heritage sage */
+      background-image: 
+        linear-gradient(145deg, rgba(200, 220, 170, 0.2) 0%, rgba(255, 255, 240, 0.4) 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      background: #fefffa;
+      border-radius: 24px;
+      box-shadow: 
+        0 12px 28px rgba(80, 100, 60, 0.12),
+        0 4px 12px rgba(70, 90, 50, 0.08),
+        inset 0 1px 0 #ffffffd9;
+      max-width: 900px;
+      width: 100%;
+      padding: 2.8rem 2.5rem;
+      border: 1px solid #d2e0c0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* heritage subtle border motif */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      border: 1px solid #c0d4aa30;
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    /* -------- HEADER -------- */
+    .card-header {
+      text-align: center;
+      margin-bottom: 2.2rem;
+      border-bottom: 1px solid #c8dab5;
+      padding-bottom: 1.4rem;
+      position: relative;
+    }
+
+    .card-header h1 {
+      font-size: 2.4rem;
+      color: #3c5e2b;       /* deep forest */
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.5px;
+      font-weight: 600;
+      text-shadow: 0 1px 2px rgba(180, 200, 150, 0.4);
+    }
+
+    .card-header h1 i {
+      color: #7f9f5e;
+      font-size: 2rem;
+      margin: 0 0.4rem;
+      vertical-align: middle;
+    }
+
+    .card-header p {
+      color: #607a4a;
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .event-badge {
+      background: #e2edd6;
+      color: #3a5a28;
+      padding: 8px 22px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid #b8ce9e;
+      box-shadow: 0 2px 4px #b0c89830;
+    }
+
+    /* -------- FORM -------- */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #3c5530;
+      font-size: 0.95rem;
+      letter-spacing: 0.2px;
+    }
+
+    label i {
+      margin-right: 8px;
+      color: #7d9f5a;
+      width: 1.1rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px 17px;
+      border: 1.5px solid #cbdbb8;
+      border-radius: 14px;
+      font-size: 1rem;
+      transition: all 0.25s;
+      background: #f9fdf5;
+      color: #2c3e1f;
+    }
+
+    input:focus, select:focus {
+      border-color: #7fa85a;
+      outline: none;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px #c8ddb0;
+    }
+
+    input::placeholder {
+      color: #9ab386;
+      font-weight: 300;
+    }
+
+    /* -------- DISTANCE SELECTOR (heritage cards) -------- */
+    .distance-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .distance-card {
+      background: #f6fbf0;
+      border: 2px solid #c2d6ac;
+      border-radius: 20px;
+      padding: 18px 12px 14px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px #b0c89820;
+    }
+
+    .distance-card:hover {
+      border-color: #88af64;
+      background: #f3faea;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px #98b87a30;
+    }
+
+    .distance-card.selected {
+      border-color: #4f7a33;
+      background: #ebf5e0;
+      box-shadow: 0 0 0 3px #b8d6a0, 0 6px 12px #8aa86b40;
+    }
+
+    .distance-card input[type="radio"] {
+      display: none;
+    }
+
+    .medal-img {
+      width: 100%;
+      max-width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 12px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 2px solid #d2e2c0;
+      transition: 0.2s;
+    }
+
+    .distance-card.selected .medal-img {
+      border-color: #87b06b;
+    }
+
+    .distance-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #3c5e2b;
+      margin-bottom: 5px;
+    }
+
+    /* -------- CATEGORY OPTIONS -------- */
+    .category-options {
+      display: flex;
+      gap: 1rem;
+      margin-top: 8px;
+    }
+
+    .category-option {
+      flex: 1;
+      text-align: center;
+      cursor: pointer;
+      background: #f5faef;
+      padding: 14px 0;
+      border-radius: 16px;
+      border: 2px solid #cbdbb8;
+      font-weight: 600;
+      color: #3c5530;
+      transition: 0.25s;
+      letter-spacing: 0.3px;
+    }
+
+    .category-option.selected {
+      background: #7fa85a;
+      color: white;
+      border-color: #5f823f;
+      box-shadow: 0 6px 12px #8aa86b40;
+    }
+
+    .category-option:hover {
+      border-color: #88af64;
+      background: #edf5e4;
+    }
+    .category-option.selected:hover {
+      background: #6f9a4a;
+    }
+
+    #studentIdBox {
+      display: none;
+      background: #f2f9e9;
+      padding: 20px;
+      border-radius: 18px;
+      border-left: 6px solid #7fa85a;
+      margin-top: 12px;
+      box-shadow: inset 0 1px 4px #c2d6ac40;
+    }
+
+    #studentIdBox.show {
+      display: block;
+    }
+
+    .price-display {
+      background: #5c823d;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      display: inline-block;
+      margin-top: 12px;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 8px #6b8f4a50;
+      border: 1px solid #aacf8c;
+    }
+
+    /* -------- PAYMENT METHOD -------- */
+    .payment-method {
+      display: flex;
+      gap: 15px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pay-option {
+      background: #f5faef;
+      border: 2px solid #cbdbb8;
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.25s;
+      color: #3c5530;
+    }
+
+    .pay-option.active {
+      background: #7fa85a;
+      color: white;
+      border-color: #5f823f;
+      box-shadow: 0 6px 12px #8aa86b40;
+    }
+
+    .pay-option:hover {
+      border-color: #88af64;
+      background: #edf5e4;
+    }
+    .pay-option.active:hover {
+      background: #6f9a4a;
+    }
+
+    /* -------- PAYMENT NUMBER BOX -------- */
+    .pay-number-box {
+      background: #eef7e6;
+      border-radius: 20px;
+      padding: 16px 22px;
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1.5px solid #c2d6ac;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: inset 0 2px 6px #d0e2bc60;
+    }
+
+    .pay-number-box .number {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #2f4a1e;
+      letter-spacing: 0.8px;
+    }
+
+    .pay-number-box .copy-btn {
+      background: #5c823d;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 26px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px #6b8f4a60;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pay-number-box .copy-btn:hover {
+      background: #3f622b;
+      box-shadow: 0 4px 10px #4f753a70;
+    }
+
+    .pay-number-box .copy-btn i {
+      margin-right: 4px;
+    }
+
+    /* -------- SUBMIT BUTTON -------- */
+    .btn-submit {
+      background: #5c823d;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 18px 32px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.3s;
+      letter-spacing: 1.2px;
+      margin-top: 16px;
+      box-shadow: 0 8px 18px #6b8f4a60;
+      border: 1px solid #aacf8c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .btn-submit:hover {
+      background: #3f622b;
+      box-shadow: 0 10px 22px #4f753a90;
+      transform: scale(1.01);
+    }
+
+    .btn-submit i {
+      font-size: 1.3rem;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      text-align: center;
+      color: #809b6a;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      border-top: 1px dashed #c2d6ac;
+      padding-top: 20px;
+    }
+
+    /* -------- EVENT DESCRIPTION (heritage style) -------- */
+    .event-description {
+      background: #f6fbf0;
+      border-radius: 22px;
+      padding: 2rem 2rem;
+      margin: 0.5rem 0 0.5rem;
+      border: 1px solid #d2e2c0;
+      box-shadow: inset 0 1px 8px #d8e8c8;
+      color: #3c4f2c;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .event-description h1 {
+      font-size: 1.9rem;
+      color: #3c5e2b;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    .event-description h2 {
+      font-size: 1.5rem;
+      color: #4b6e33;
+      margin: 1.6rem 0 0.8rem;
+      font-weight: 600;
+      border-left: 6px solid #9bb87e;
+      padding-left: 16px;
+    }
+
+    .event-description h3 {
+      font-size: 1.2rem;
+      color: #5f823f;
+      margin: 1.4rem 0 0.5rem;
+      font-weight: 600;
+    }
+
+    .event-description p {
+      margin-bottom: 0.9rem;
+    }
+
+    .event-description ul {
+      margin: 0.8rem 0 1.2rem 1.8rem;
+    }
+
+    .event-description li {
+      margin-bottom: 0.4rem;
+    }
+
+    .event-description hr {
+      border: 0;
+      border-top: 1.5px dashed #b8ce9e;
+      margin: 2rem 0 1.8rem;
+    }
+
+    .event-description a {
+      color: #4f7a33;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dotted #7fa85a;
+    }
+
+    .event-description a:hover {
+      color: #2c4a1a;
+      border-bottom: 2px solid #5c823d;
+    }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 650px) {
+      .card {
+        padding: 2rem 1.5rem;
+      }
+      .distance-selector {
+        grid-template-columns: 1fr;
+      }
+      .row {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .medal-img {
+        max-width: 200px;
+        height: 180px;
+      }
+      .card-header h1 {
+        font-size: 1.9rem;
+      }
+      .event-description {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="card-header">
+      <h1>
+        <i class="fas fa-leaf"></i>
+        StrideX Bangladesh
+        <i class="fas fa-leaf"></i>
+      </h1>
+
+      <p>Curzon Heritage Run 2026</p>
+
+      <div class="event-badge">
+        <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>
+        Event Date: 1 Oct – 31 Oct 2026
+      </div>
+    </div>
+
+    <form id="registrationForm">
+
+      <!-- Distance Selection with Medals -->
+      <div>
+        <label>
+          <i class="fas fa-route"></i> Select Distance
+        </label>
+
+        <div class="distance-selector">
+
+          <label class="distance-card" id="dist3km">
+            <input type="radio" name="distance" value="3.1km" checked>
+            <img
+              src="5km.jpeg"
+              class="medal-img"
+          
+            >
+            <div class="distance-name">5 km</div>
+          </label>
+
+          <label class="distance-card" id="dist6km">
+            <input type="radio" name="distance" value="6.66km">
+            <img
+              src="10km.jpeg"
+              class="medal-img"
+             
+            >
+            <div class="distance-name">10 km</div>
+          </label>
+
+          <label class="distance-card" id="dist13km">
+            <input type="radio" name="distance" value="13km">
+            <img
+              src="15km.jpeg"
+              class="medal-img"
+             
+            >
+            <div class="distance-name">15 km</div>
+          </label>
+
+        </div>
+      </div>
+
+      <!-- EVENT DESCRIPTION (heritage style) -->
+      <div class="event-description">
+
+        <h1>🏃‍♂️ Curzon Heritage Run 2026</h1>
+
+        <p>
+          দৌড় হোক নিজের গতিতে, নিজের জায়গা থেকে—কিন্তু লক্ষ্য হোক একটাই:
+          <strong>নিজেকে ছাড়িয়ে যাওয়া!</strong>
+        </p>
+
+        <p>
+          <strong>StrideX Bangladesh</strong> নিয়ে এসেছে
+          <strong>Curzon Heritage Run 2026</strong>—একটি সম্পূর্ণ
+          <strong>Virtual Running Challenge</strong>, যেখানে আপনি দেশের যেকোনো
+          প্রান্ত থেকে, আপনার সুবিধামতো সময়ে অংশগ্রহণ করতে পারবেন।
+          কোনো নির্দিষ্ট মাঠে বা নির্দিষ্ট সময়ে উপস্থিত থাকার প্রয়োজন নেই।
+          শুধু আপনার দৌড়, আপনার পরিশ্রম এবং আপনার অর্জন—সবকিছুই হবে আপনার নিজের মতো করে.
+        </p>
+
+        <hr>
+
+        <h2>Virtual Run কী?</h2>
+
+        <p>
+          Virtual Run হলো এমন একটি Running Event যেখানে অংশগ্রহণকারীরা
+          নির্দিষ্ট কোনো venue-তে একসাথে দৌড়ান না। বরং Event Period-এর মধ্যে
+          নিজের সুবিধামতো <strong>যেকোনো জায়গায় এবং যেকোনো সময়ে</strong>
+          নির্ধারিত দূরত্ব সম্পন্ন করতে পারেন।
+        </p>
+
+        <p>
+          আপনি চাইলে বাসার আশেপাশের রাস্তা, পার্ক, মাঠ, ট্র্যাক কিংবা আপনার
+          পছন্দের যেকোনো নিরাপদ জায়গায় দৌড়াতে পারবেন।
+        </p>
+
+        <p>
+          আপনার দৌড় <strong>Strava App</strong>-এর মাধ্যমে Record করতে হবে।
+          দৌড় শেষ করার পর Strava-এর Run Activity Link আমাদের নির্ধারিত
+          Submission Form-এর মাধ্যমে জমা দিতে হবে।
+        </p>
+
+        <p>
+          অর্থাৎ—<strong>আপনার Run, আপনার সময়, আপনার পথ; কিন্তু Challenge আমাদের সবার।</strong> 🖤
+        </p>
+
+        <hr>
+
+        <h2>EVENT PERIOD</h2>
+
+        <p>
+          <strong>01 October – 31 October 2026</strong>
+        </p>
+
+        <p>
+          এই এক মাসের মধ্যে আপনার সুবিধামতো যেকোনো দিনে আপনার নির্বাচিত
+          Distance সম্পন্ন করতে পারবেন।
+        </p>
+
+        <p>
+          <strong>Location:</strong> Virtual — Run Anywhere, Anytime
+        </p>
+
+        <p>
+          <strong>Registration Opens:</strong> 10 September 2026
+        </p>
+
+        <hr>
+
+        <h2>RUN CATEGORIES</h2>
+
+        <ul>
+          <li><strong>5 KM — Silver</strong></li>
+          <li><strong>10 KM — Golden</strong></li>
+          <li><strong>15 KM — Black</strong></li>
+        </ul>
+
+        <p>
+          আপনার সক্ষমতা ও প্রস্তুতি অনুযায়ী যেকোনো একটি Category নির্বাচন করে
+          Challenge সম্পন্ন করুন।
+        </p>
+
+        <hr>
+
+        <h2>REGISTRATION FEE</h2>
+
+        <p>
+          <strong>Regular Category:</strong> 649 BDT
+          
+        </p>
+
+        <p>
+          <strong>Student Category:</strong> 599 BDT
+         
+        </p>
+
+        <hr>
+
+        <h2>কীভাবে অংশগ্রহণ করবেন?</h2>
+
+        <h3>১️ Registration করুন</h3>
+        <p>
+          নির্ধারিত সময়ের মধ্যে আপনার পছন্দের Run Category নির্বাচন করে
+          Registration সম্পন্ন করুন।
+        </p>
+
+        <h3>২️ E-BIB সংগ্রহ করুন</h3>
+        <p>
+          Event-এর আগে আপনার <strong>Official E-BIB Number</strong>
+          ই-মেইলের মাধ্যমে পাঠিয়ে দেওয়া হবে।
+        </p>
+
+        <h3>৩️ আপনার Run সম্পন্ন করুন</h3>
+        <p>
+          <strong>01 October – 31 October 2026</strong>-এর মধ্যে আপনার
+          সুবিধামতো যেকোনো দিন ও সময়ে নির্বাচিত Distance সম্পন্ন করুন।
+        </p>
+
+        <h3>৪️ Strava দিয়ে Run Record করুন</h3>
+        <p>
+          আপনার পুরো Run অবশ্যই <strong>Strava App</strong> ব্যবহার করে
+          Record করতে হবে, যাতে Distance, Time এবং অন্যান্য Run Data
+          সংরক্ষিত থাকে।
+        </p>
+
+        <h3>৫️ Run Submission করুন</h3>
+        <p>
+          Run শেষ করার পর আপনার <strong>Strava Activity Link</strong> এবং
+          প্রয়োজনীয় তথ্য Official Submission Form-এর মাধ্যমে জমা দিন।
+        </p>
+
+        <p>
+          <strong>Submission Form-এর Link আপনার ই-মেইলে পাঠিয়ে দেওয়া হবে।</strong>
+        </p>
+
+        <h3>৬️ Verification শেষে Finisher হোন! </h3>
+        <p>
+          আপনার Run সফলভাবে সম্পন্ন ও যাচাই হওয়ার পর আপনি পাবেন আপনার
+          <strong>Finisher Rewards</strong>।
+        </p>
+
+        <hr>
+
+        <h2>FINISHERS-দের জন্য থাকছে</h2>
+
+        <ul>
+          <li>Exclusive <strong>China Finisher Medal</strong></li>
+          <li><strong>Surprise Gift</strong></li>
+          <li><strong>Personalized E-Certificate</strong></li>
+          <li>Official <strong>E-BIB Number</strong></li>
+        </ul>
+
+        <p>
+          অর্থাৎ, শুধু দৌড় নয়—আপনার এই অর্জনকে স্মরণীয় করে রাখার জন্য
+          থাকছে বিশেষ Finisher Recognition।
+        </p>
+
+        <hr>
+
+        <h2>আপনার Run-এর মুহূর্ত শেয়ার করুন!</h2>
+
+        <p>
+          দৌড়ের সময় আপনার ছবি তুলুন, আপনার Running Journey শেয়ার করুন
+          এবং আমাদের Community-এর সাথে যুক্ত থাকুন।
+        </p>
+
+        <p>
+          আপনার Run<br>
+          আপনার Story<br>
+          আপনার Achievement
+        </p>
+
+        <p>
+          <strong>হ্যাশট্যাগ ব্যবহার করুন:</strong>
+        </p>
+
+        <p>
+          <strong>#StrideXBD</strong><br>
+          <strong>#CurzonHeritageRun2026</strong><br>
+          <strong>#StrideXBangladesh</strong>
+        </p>
+
+        <hr>
+
+        <h2>CONTACT INFORMATION</h2>
+
+        <p>
+          <strong>Organized by:</strong> StrideX Bangladesh
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:stridexbd@gmail.com">
+            stridexbd@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <strong>WhatsApp/Call:</strong> 01687414286
+        </p>
+
+        <p>
+          <strong>Facebook:</strong>
+          <a href="https://www.facebook.com/stridexbd">
+            https://www.facebook.com/stridexbd
+          </a>
+        </p>
+
+        <hr>
+
+        <p>
+          🏃 <strong>See you on the road!</strong>
+        </p>
+
+        <p>
+          <strong>StrideX Bangladesh</strong>
+        </p>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <label>
+            <i class="fas fa-user"></i> Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            required
+          >
+        </div>
+
+        <div class="col">
+          <label>
+            <i class="fas fa-envelope"></i> Email Address
+          </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="you@email.com"
+            required
+          >
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <label>
+            <i class="fas fa-phone"></i> Phone / WhatsApp
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="+880 1XXXXXXXXX"
+            required
+          >
+        </div>
+
+        <div class="col">
+
+          <label>
+            <i class="fas fa-tag"></i> Category
+          </label>
+
+          <div class="category-options">
+
+            <label class="category-option" id="studentLabel">
+              <input
+                type="radio"
+                name="category"
+                value="student"
+                id="studentRadio"
+                style="display:none;"
+              >
+              Student
+            </label>
+
+            <label class="category-option" id="regularLabel">
+              <input
+                type="radio"
+                name="category"
+                value="regular"
+                id="regularRadio"
+                style="display:none;"
+                checked
+              >
+              Regular
+            </label>
+
+          </div>
+
+          <div style="margin-top:12px;">
+            <span class="price-display" id="priceBox">
+              ৳ 649
+            </span>
+            <span style="color:#6e8b54; font-size:0.9rem; margin-left:12px; font-weight:500;">
+              Registration Fee
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Student ID Box -->
+      <div id="studentIdBox">
+        <label>
+          <i class="fas fa-id-card"></i> Student ID Card
+        </label>
+        <input
+          type="file"
+          name="student_id"
+          id="studentIdInput"
+          accept="image/*"
+        >
+        <p style="color:#7a9662; font-size:0.85rem; margin-top:8px;">
+          Upload your student ID card image
+        </p>
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <label>
+            <i class="fas fa-venus-mars"></i> Gender
+          </label>
+          <select name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="col">
+
+          <label>
+            <i class="fas fa-credit-card"></i> Payment Method
+          </label>
+
+          <div class="payment-method">
+
+            <label class="pay-option active" id="bkashLabel">
+              <input
+                type="radio"
+                name="payment_method"
+                value="Bkash"
+                style="display:none;"
+                checked
+              >
+              Bkash
+            </label>
+
+            <label class="pay-option" id="nagadLabel">
+              <input
+                type="radio"
+                name="payment_method"
+                value="Nagad"
+                style="display:none;"
+              >
+              Nagad
+            </label>
+
+            <label class="pay-option" id="rocketLabel">
+              <input
+                type="radio"
+                name="payment_method"
+                value="Rocket"
+                style="display:none;"
+              >
+              Rocket
+            </label>
+
+          </div>
+
+          <!-- Payment number display -->
+          <div id="paymentNumberBox" class="pay-number-box">
+            <span class="number" id="payNumberDisplay">
+              01805749874 (Payment)
+            </span>
+            <button type="button" class="copy-btn" id="copyPayBtn">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <label>
+            <i class="fas fa-mobile-alt"></i> Your Payment Number
+          </label>
+          <input
+            type="text"
+            name="payment_number"
+            placeholder="01XXXXXXXXX"
+            required
+          >
+        </div>
+
+        <div class="col">
+          <label>
+            <i class="fas fa-exchange-alt"></i> Transaction ID
+          </label>
+          <input
+            type="text"
+            name="trx_id"
+            placeholder="TXN..."
+            required
+          >
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn-submit">
+        <i class="fas fa-check-circle"></i>
+        Register Now
+      </button>
+
+      <div class="footer-note">
+        Thank you for being with StrideX Bangladesh
+      </div>
+
+    </form>
+
+  </div>
+
+  <script>
+    (function(){
+      // --------------------------------------------------
+      // DISTANCE SELECTION
+      // --------------------------------------------------
+      const distCards = document.querySelectorAll('.distance-card');
+      const distRadios = document.querySelectorAll('input[name="distance"]');
+
+      function updateDistanceUI() {
+        distCards.forEach(card => {
+          card.classList.remove('selected');
+          const radio = card.querySelector('input');
+          if (radio.checked) {
+            card.classList.add('selected');
+          }
+        });
+      }
+
+      distRadios.forEach(radio => {
+        radio.addEventListener('change', updateDistanceUI);
+      });
+
+      distCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          const radio = this.querySelector('input');
+          radio.checked = true;
+          updateDistanceUI();
+        });
+      });
+
+      updateDistanceUI();
+
+      // --------------------------------------------------
+      // CATEGORY + PRICE
+      // --------------------------------------------------
+      const studentRadio = document.getElementById('studentRadio');
+      const regularRadio = document.getElementById('regularRadio');
+      const priceBox = document.getElementById('priceBox');
+      const studentIdBox = document.getElementById('studentIdBox');
+      const studentLabel = document.getElementById('studentLabel');
+      const regularLabel = document.getElementById('regularLabel');
+      const studentIdInput = document.getElementById('studentIdInput');
+
+      function updateCategoryUI() {
+        if (studentRadio.checked) {
+          priceBox.innerText = '৳ 599';
+          studentIdBox.classList.add('show');
+          studentIdInput.setAttribute('required', 'required');
+          studentLabel.classList.add('selected');
+          regularLabel.classList.remove('selected');
+        } else {
+          priceBox.innerText = '৳ 649';
+          studentIdBox.classList.remove('show');
+          studentIdInput.removeAttribute('required');
+          regularLabel.classList.add('selected');
+          studentLabel.classList.remove('selected');
+        }
+      }
+
+      studentRadio.addEventListener('change', updateCategoryUI);
+      regularRadio.addEventListener('change', updateCategoryUI);
+
+      studentLabel.addEventListener('click', function(e) {
+        e.preventDefault();
+        studentRadio.checked = true;
+        updateCategoryUI();
+      });
+
+      regularLabel.addEventListener('click', function(e) {
+        e.preventDefault();
+        regularRadio.checked = true;
+        updateCategoryUI();
+      });
+
+      // Initialize regular category
+      regularRadio.checked = true;
+      updateCategoryUI();
+
+      // --------------------------------------------------
+      // PAYMENT NUMBER + COPY
+      // --------------------------------------------------
+      const payNumberDisplay = document.getElementById('payNumberDisplay');
+      const copyBtn = document.getElementById('copyPayBtn');
+
+      const paymentDisplay = {
+        'Bkash': '01805749874 (Payment)',
+        'Nagad': '01687414286 (Send Money)',
+        'Rocket': '01624577374 (Send Money)'
+      };
+
+      const paymentRaw = {
+        'Bkash': '01805749874',
+        'Nagad': '01687414286',
+        'Rocket': '01624577374'
+      };
+
+      const payRadios = document.querySelectorAll('input[name="payment_method"]');
+      const payLabels = document.querySelectorAll('.pay-option');
+
+      function updatePaymentUI() {
+        payLabels.forEach(label => {
+          label.classList.remove('active');
+          const radio = label.querySelector('input');
+          if (radio.checked) {
+            label.classList.add('active');
+            const method = radio.value;
+            payNumberDisplay.textContent = paymentDisplay[method] || '01234567890 (Payment)';
+          }
+        });
+      }
+
+      payRadios.forEach(radio => {
+        radio.addEventListener('change', updatePaymentUI);
+      });
+
+      payLabels.forEach(label => {
+        label.addEventListener('click', function(e) {
+          const radio = this.querySelector('input');
+          radio.checked = true;
+          updatePaymentUI();
+        });
+      });
+
+      // Copy payment number
+      copyBtn.addEventListener('click', function() {
+        let currentMethod = 'Bkash';
+        payRadios.forEach(radio => {
+          if (radio.checked) {
+            currentMethod = radio.value;
+          }
+        });
+
+        const numberToCopy = paymentRaw[currentMethod] || '01805749874';
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(numberToCopy)
+            .then(() => {
+              alert('Payment number copied: ' + numberToCopy);
+            })
+            .catch(() => {
+              copyViaInput(numberToCopy);
+            });
+        } else {
+          copyViaInput(numberToCopy);
+        }
+      });
+
+      function copyViaInput(text) {
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        alert('Payment number copied: ' + text);
+      }
+
+      // Default Bkash
+      const defaultPay = document.querySelector('input[name="payment_method"][value="Bkash"]');
+      if (defaultPay) {
+        defaultPay.checked = true;
+        payNumberDisplay.textContent = paymentDisplay['Bkash'];
+      }
+      updatePaymentUI();
+
+      // --------------------------------------------------
+      // META PIXEL COOKIE HELPER
+      // --------------------------------------------------
+      function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? decodeURIComponent(match[2]) : null;
+      }
+
+      // --------------------------------------------------
+      // FORM SUBMIT
+      // --------------------------------------------------
+      document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const name = document.querySelector('input[name="name"]').value.trim();
+        if (!name) {
+          alert('Please enter your name.');
+          return;
+        }
+
+        if (studentRadio.checked && !studentIdInput.files.length) {
+          alert('Please upload your student ID card.');
+          return;
+        }
+
+        const email = document.querySelector('input[name="email"]').value.trim();
+        if (!email) {
+          alert('Please enter your email.');
+          return;
+        }
+
+        const distance = document.querySelector('input[name="distance"]:checked').value;
+        const category = studentRadio.checked ? 'student' : 'regular';
+        const gender = document.querySelector('select[name="gender"]').value;
+        const payment_method = document.querySelector('input[name="payment_method"]:checked').value;
+        const payment_number = document.querySelector('input[name="payment_number"]').value.trim();
+        const trx_id = document.querySelector('input[name="trx_id"]').value.trim();
+        const registration_fee = studentRadio.checked ? 599 : 649;
+
+        const submitButton = document.querySelector('.btn-submit');
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+
+        try {
+          const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              phone: document.querySelector('input[name="phone"]').value.trim(),
+              distance,
+              category,
+              gender,
+              payment_method,
+              payment_number,
+              trx_id,
+              registration_fee,
+              fbp: getCookie('_fbp'),
+              fbc: getCookie('_fbc'),
+              event_source_url: window.location.href
+            })
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            // META PIXEL - COMPLETE REGISTRATION
+            if (typeof fbq === 'function') {
+              fbq('track', 'CompleteRegistration', {
+                value: Number(registration_fee) || 0,
+                currency: 'BDT'
+              }, {
+                eventID: String(data.registration_id)
+              });
+            }
+
+            alert(
+              `✅ Registration Successful!\n\n` +
+              `Name: ${name}\n` +
+              `Distance: ${distance}\n` +
+              `Category: ${category}\n` +
+              `Payment: ${payment_method}\n\n` +
+              `Registration ID: ${data.registration_id}\n\n` +
+              `Thank you! See you there!`
+            );
+
+            document.getElementById('registrationForm').reset();
+            regularRadio.checked = true;
+            updateCategoryUI();
+            updatePaymentUI();
+            updateDistanceUI();
+
+          } else {
+            alert('❌ Registration failed.\n\n' + (data.message || 'Please try again.'));
+          }
+
+        } catch (error) {
+          console.error('Submit Error:', error);
+          alert('❌ Could not connect to the server.\n\nPlease make sure the RavenX backend is running.');
+        } finally {
+          submitButton.disabled = false;
+          submitButton.innerHTML = '<i class="fas fa-check-circle"></i> Register Now';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
